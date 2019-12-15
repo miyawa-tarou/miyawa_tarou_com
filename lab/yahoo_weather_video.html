@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ヤフー天気動画全リスト</title>
+
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pc.css" type="text/css" media="screen and (min-width: 1090px)" />
+    <link rel="stylesheet" href="../css/mobile.css" type="text/css" media="screen and (max-width: 1089px)">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@miyawa_tarou" />
+    <meta property="og:url" content="https://miyawa-tarou.com/lab/yahoo_weather_video.html" />
+    <meta property="og:title" content="ヤフー天気動画全リスト" />
+    <meta property="og:description" content="ヤフー天気動画全リスト" />
+    <meta property="og:image" content="https://miyawa-tarou.com/img/icon.jpg" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>
+
+    <style>
+        body {
+            font-size: 12px;
+        }
+
+        #list_link {
+            text-align:center;
+        }
+        #list_link li{
+            display: inline-block;
+            float:left;
+            width:150px;
+        }
+        #list_link:after {
+            content: "";
+            clear: both;
+            height: 0;
+            display: block;
+            visibility: hidden;
+        }
+        #video_list {
+            border: solid 1px #000;
+            border-collapse: collapse;
+            margin:10px auto;
+        }
+        #video_list caption {
+            font-weight: bold;
+        }
+        #body #body-contents {
+            background-color: #fff;
+        }
+
+        #body #body-contents a{
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<header id="header">
+    <div id="header-title"><h1 class="wrapper">MiyawaTarou</h1></div>
+    <div id="header-photo"><img src="../img/header/header_12.jpg" /></div>
+    <nav id="heaader-menu">
+        <ul id="heaader-menu-list">
+            <a href="/"><li>Home</li></a>
+            <!--            <li><a href="">Biography</a></li>//-->
+            <a href="/works.html"><li>Works</li></a>
+            <a href="https://blog.miyawa-tarou.com"><li>Blog</li></a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv-dJ-BLQIyGL0s0RxW8OD5Ukb2EjVvQF5NtEBGqPNBmr5gw/viewform"><li>Contact Me</li></a>
+        </ul>
+    </nav>
+</header>
+<section id="body">
+    <div id="body-contents">
+
+        <h1>Yahoo!天気動画出演リスト</h1>
+        <ul>
+            <li>全リストを作ろうと思いましたが、多分一部バグってます。</li>
+            <li>---は名前の自動取得失敗です</li>
+            <li>名前は基本初出演順</li>
+            <li>Script:<a href="https://github.com/miyawa-tarou/yahoo_weather_videos">https://github.com/miyawa-tarou/yahoo_weather_videos</a></li>
+        </ul>
+
+        <div id="app">
+            <ul id="list_link">
+                <li v-for="(videos, key) in list"><a v-bind:href="'#' + key">{{key}}（{{count[key]}}）</a></li>
+            </ul>
+            <table v-for="(videos, key) in list" border id="video_list">
+                <caption><a v-bind:name="key">{{key}}（{{count[key]}}）</a></caption>
+                <tr v-for="video in videos">
+                    <td><a v-bind:href="video[3]">{{video[1]}}</a>（{{video[2]}}）</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    list: {},
+                    count: {}
+                },
+                created: function () {
+                    var self = this;
+                    $.ajaxSetup({async: false});
+                    $.get("video_list.csv", function(data) {
+                        var csv = $.csv.toArrays(data);
+                        for(var i in csv) {
+                            var name = csv[i][4]
+                            if (self.list.hasOwnProperty(name)) {
+                                self.list[name].push(csv[i]);
+                                self.count[name]++;
+                            } else {
+                                self.list[name] = [csv[i]]
+                                self.count[name] = 1;
+                            }
+                        }
+                        console.log(self.list);
+                    });
+
+                },
+                watch: {
+                    list: function(val) {
+                        console.log(val);
+                    }
+                }
+            });
+        </script>
+    </div>
+</section>
+<footer id="footer">
+    &copy; MiyawaTarou
+</footer>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37983895-3', 'miyawa-tarou.com');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

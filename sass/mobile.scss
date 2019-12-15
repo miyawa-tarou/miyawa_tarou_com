@@ -1,0 +1,141 @@
+
+$bgColor: #f1f1f1;
+
+body {
+  margin:0;
+  padding: 0;
+}
+
+#header {
+  #header-title {
+    width: auto;
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin: 5px auto;
+    }
+  }
+  #header-photo {
+    width: 100%;
+    margin:0;
+    padding: 0;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  #heaader-menu {
+    width: 100%;
+    background-color: #555;
+    padding:0;
+
+    font-size:16px;
+    line-height: 30px;
+
+    #heaader-menu-list {
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+      padding: 0;
+
+
+      a {
+        text-decoration: none;
+        color: #EEE;
+        li {
+          width: 49%;
+          display: inline-block;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+      li:hover {
+        color: #333;
+        background-color: $bgColor;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+#body {
+  width: 100%;
+  background-color: $bgColor;
+
+  #body-contents {
+    width: 100%;
+    margin: 0 auto;
+
+    #body-contents-description {
+      width: 90%;
+      margin: auto;
+      font-size: 13px;
+      padding: 10px;
+    }
+
+    #body-contents-title {
+      margin: auto;
+      text-align: center;
+    }
+    #body-contents-main {
+      padding: 0;
+      margin:0;
+      text-align: center;
+
+      li {
+        width: 44%;
+        margin: 2% 1%;
+        display: inline-block;
+        img {
+          width: 100%;
+        }
+
+      }
+      li:hover {
+        filter: blur(1px) brightness(1.05);
+        transform: scale(1.03);
+      }
+    }
+
+    .body-contents-workYear {
+      text-align: center;
+    }
+    .body-contents-worksList {
+      list-style-type: none;
+      margin:0;
+      padding:0;
+      li {
+        margin: 10px 0;
+
+        .body-contents-worksList-description{
+          width:80%;
+          margin: auto;
+          h3 {
+            font-size: 15px;
+          }
+
+          p {
+            text-indent: 15px;
+            font-size: 13px;
+            margin: 5px 0;
+          }
+        }
+        .body-contents-worksList-visual{
+          text-align: center;
+          img, video{
+            background-color: #FFF;
+            max-width:80%;
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+#footer {
+  width: 100%;
+  background-color: $bgColor;
+  text-align: center;
+}

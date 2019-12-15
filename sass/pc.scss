@@ -1,0 +1,137 @@
+
+$wrapperWidth: 1090px;
+$bgColor: #f1f1f1;;
+
+#header {
+  #header-title {
+    width: 100%;
+    h1 {
+      font-size: 32px;
+      width: $wrapperWidth;
+      background: #fff url("../img/icon.jpg") no-repeat;
+      background-size: 42px 42px;
+      margin: 10px auto;
+      text-indent: 50px;
+    }
+  }
+  #header-photo {
+    width: 100%;
+    margin:0;
+    padding: 0;
+    img {
+      width: 100%;
+      display: block;
+      min-width: $wrapperWidth;
+    }
+  }
+  #heaader-menu {
+    width: 100%;
+    background-color: #555;
+
+    height: 40px;
+    font-size:16px;
+    line-height: 40px;
+
+    #heaader-menu-list {
+      width: $wrapperWidth;
+      margin: 0 auto;
+      text-align: center;
+
+    a {
+        text-decoration: none;
+        color: #EEE;
+      li {
+        width: 150px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        }
+      }
+      li:hover {
+        color: #333;
+        background-color: $bgColor;
+        font-weight: bold;
+      }
+    }
+  }
+
+}
+
+#body {
+  width: 100%;
+  background-color: $bgColor;
+
+  #body-contents {
+    width: $wrapperWidth;
+    margin: 0 auto;
+    padding: 10px;
+
+    #body-contents-description {
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    #body-contents-title {
+      margin: auto;
+      text-align: center;
+    }
+    #body-contents-main {
+      margin: 10px auto;
+
+      li {
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        display: inline-block;
+      }
+      li:hover {
+        filter: blur(1px) brightness(1.05);
+        transform: scale(1.03);
+      }
+    }
+
+    .body-contents-workYear {
+      margin: 24px 0 0 0;
+    }
+    .body-contents-worksList {
+      list-style-type: none;
+      li {
+        margin: 10px 0;
+
+
+        .body-contents-worksList-description{
+          float:right;
+          width: 50%;
+          vertical-align:middle;
+        }
+        .body-contents-worksList-visual{
+          float: left;
+          width: 50%;
+          text-align: center;
+          vertical-align:middle;
+          img, video{
+            background-color: #FFF;
+            max-width:500px;
+          }
+        }
+
+      }
+      li:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+    }
+  }
+}
+
+#footer {
+  width: 100%;
+  background-color: $bgColor;
+  text-align: center;
+}
+.wrapper {
+  width: $wrapperWidth;
+  margin: 0 auto;
+}
