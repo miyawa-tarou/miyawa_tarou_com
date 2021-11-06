@@ -1,17 +1,12 @@
 let gulp = require('gulp');
 let sass = require('gulp-sass');
 
-gulp.task('sass', function(){
-    gulp.src('./sass/*.scss')
-        .pipe(sass({outputStyle: 'expanded'}))
-        .pipe(gulp.dest('./css/'));
-});
+const compileSass = () =>
+        gulp.src('./sass/*.scss')
+            .pipe(sass({outputStyle: 'expanded'}))
+            .pipe(gulp.dest('./css/'));
 
+const watchSassFiles = () =>
+    gulp.watch('./sass/*.scss', compileSass);
 
-gulp.task('sass-watch', ['sass'], function(){
-    let watcher = gulp.watch('./sass/*.scss', ['sass']);
-    watcher.on('change', function(event) {
-    });
-});
-
-gulp.task('default', ['sass-watch']);
+exports.default = gulp.parallel(compileSass, watchSassFiles);
