@@ -1,0 +1,141 @@
+#header #header-title {
+  width: 100%;
+}
+
+#header #header-title h1 {
+  font-size: 32px;
+  width: 1090px;
+  background: #fff url("../img/icon.jpg") no-repeat;
+  background-size: 42px 42px;
+  margin: 10px auto;
+  text-indent: 50px;
+}
+
+#header #header-photo {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#header #header-photo img {
+  width: 100%;
+  display: block;
+  min-width: 1090px;
+}
+
+#header #heaader-menu {
+  width: 100%;
+  background-color: #555;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+#header #heaader-menu #heaader-menu-list {
+  width: 1090px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#header #heaader-menu #heaader-menu-list a {
+  text-decoration: none;
+  color: #EEE;
+}
+
+#header #heaader-menu #heaader-menu-list a li {
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+#header #heaader-menu #heaader-menu-list li:hover {
+  color: #333;
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+#body {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+#body #body-contents {
+  width: 1090px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#body #body-contents #body-contents-description {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}
+
+#body #body-contents #body-contents-title {
+  margin: auto;
+  text-align: center;
+}
+
+#body #body-contents #body-contents-main {
+  margin: 10px auto;
+}
+
+#body #body-contents #body-contents-main li {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  display: inline-block;
+}
+
+#body #body-contents #body-contents-main li:hover {
+  filter: blur(1px) brightness(1.05);
+  transform: scale(1.03);
+}
+
+#body #body-contents .body-contents-workYear {
+  margin: 24px 0 0 0;
+}
+
+#body #body-contents .body-contents-worksList {
+  list-style-type: none;
+}
+
+#body #body-contents .body-contents-worksList li {
+  margin: 10px 0;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-description {
+  float: right;
+  width: 50%;
+  vertical-align: middle;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-visual {
+  float: left;
+  width: 50%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-visual img, #body #body-contents .body-contents-worksList li .body-contents-worksList-visual video {
+  background-color: #FFF;
+  max-width: 500px;
+}
+
+#body #body-contents .body-contents-worksList li:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+#footer {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.wrapper {
+  width: 1090px;
+  margin: 0 auto;
+}

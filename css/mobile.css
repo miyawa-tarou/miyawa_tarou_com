@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#header #header-title {
+  width: auto;
+}
+
+#header #header-title h1 {
+  font-size: 24px;
+  text-align: center;
+  margin: 5px auto;
+}
+
+#header #header-photo {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#header #header-photo img {
+  width: 100%;
+  display: block;
+}
+
+#header #heaader-menu {
+  width: 100%;
+  background-color: #555;
+  padding: 0;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+#header #heaader-menu #heaader-menu-list {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+}
+
+#header #heaader-menu #heaader-menu-list a {
+  text-decoration: none;
+  color: #EEE;
+}
+
+#header #heaader-menu #heaader-menu-list a li {
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+#header #heaader-menu #heaader-menu-list li:hover {
+  color: #333;
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+#body {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+#body #body-contents {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#body #body-contents #body-contents-description {
+  width: 90%;
+  margin: auto;
+  font-size: 13px;
+  padding: 10px;
+}
+
+#body #body-contents #body-contents-title {
+  margin: auto;
+  text-align: center;
+}
+
+#body #body-contents #body-contents-main {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#body #body-contents #body-contents-main li {
+  width: 44%;
+  margin: 2% 1%;
+  display: inline-block;
+}
+
+#body #body-contents #body-contents-main li img {
+  width: 100%;
+}
+
+#body #body-contents #body-contents-main li:hover {
+  filter: blur(1px) brightness(1.05);
+  transform: scale(1.03);
+}
+
+#body #body-contents .body-contents-workYear {
+  text-align: center;
+}
+
+#body #body-contents .body-contents-worksList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#body #body-contents .body-contents-worksList li {
+  margin: 10px 0;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-description {
+  width: 80%;
+  margin: auto;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-description h3 {
+  font-size: 15px;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-description p {
+  text-indent: 15px;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-visual {
+  text-align: center;
+}
+
+#body #body-contents .body-contents-worksList li .body-contents-worksList-visual img, #body #body-contents .body-contents-worksList li .body-contents-worksList-visual video {
+  background-color: #FFF;
+  max-width: 80%;
+}
+
+#footer {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+}
