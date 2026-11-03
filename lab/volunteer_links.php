@@ -107,7 +107,7 @@ $files = json_encode(getVolunteerLinks());
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-37983895-3', 'miyawa-tarou.com');
+    ga('create', 'UA-37983895-3', 'miyawa.dojin-music.info');
     ga('send', 'pageview');
 
   </script>
